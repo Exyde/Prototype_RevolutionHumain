@@ -18,9 +18,10 @@ public class FollowTarget : MonoBehaviour{
     }
 
     public void SetTarget(Transform target) => this.target = target;
-    void OnValidate(){
-        transform.position = target.position + offset;
-        if (lookAtTarget) transform.LookAt(target);
-    }
+    
+    // void OnValidate(){
+    //     transform.position = target.position + offset;
+    //     if (lookAtTarget) transform.LookAt(target);
+    // }
 
 }
