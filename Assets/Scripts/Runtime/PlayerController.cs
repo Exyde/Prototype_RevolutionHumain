@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class PlayerController : MonoBehaviour{
+	
+	public void HandleMove(Vector2 inputs) {
+		Debug.Log("Move");
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public void HandleDash() => Debug.Log("Dash");
+	public void HandleInteract() => Debug.Log("Interact");
+
 }
