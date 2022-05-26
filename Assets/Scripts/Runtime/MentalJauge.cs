@@ -20,6 +20,7 @@ public class MentalJauge : MonoBehaviour
     #region Unity Callbacks
    void Start()
     {
+        this.gameObject.SetActive(true);
         _mentalSanity = 100f;
         _percentLossPerSecond = _mentalSanity / (float) GameManager._instance.GetGameDuration();
         InvokeRepeating("DecaySanity", 0, 1);

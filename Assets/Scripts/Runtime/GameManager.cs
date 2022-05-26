@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     {
         if (_instance != null && _instance != this) Destroy (this.gameObject);
         _instance = this;
+
+        _mentalJauge.gameObject.SetActive(true);
     }
     public void ReloadGame(){
         SceneManager.LoadScene(0);

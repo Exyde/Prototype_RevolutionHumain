@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour{
 		_rb.useGravity = false;
 		Vector3 vel = (transform.forward * _dashSpeed);
 		_rb.velocity = vel;
-		Debug.Log ("Velocity : " + vel);
+		GameManager._instance.AdjustSanity(-_mentalStabilityDecayPercentage);
 		//Fx 
 		yield return new WaitForSeconds(_dashDuration);
 		_rb.useGravity = true;
