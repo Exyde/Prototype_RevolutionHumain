@@ -7,7 +7,11 @@ public class FollowTarget : MonoBehaviour{
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset;
     [SerializeField] bool lookAtTarget;
-            
+    
+    private void Awake(){
+        if (target == null) target = this.transform;
+    }
+
     private void Update(){
         if (lookAtTarget) transform.LookAt(target);
         transform.position = target.position + offset;
