@@ -3359,7 +3359,7 @@ GameObject:
   - component: {fileID: 1070333522}
   - component: {fileID: 1070333526}
   m_Layer: 5
-  m_Name: MentalJaugeCanvas
+  m_Name: PF_MentalJauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3460,7 +3460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mentalSanity: 0
-  _gameDurationInSeconds: 30
   _panelSanity: {fileID: 2074686577}
   _imgPanelSanity: {fileID: 2074686579}
   _imgSanityJauge: {fileID: 1810224587}
@@ -4607,6 +4606,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470612013}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1471970689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7223982340372247944, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+  m_PrefabInstance: {fileID: 8596230971825203318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1498553993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4508286432324468682, guid: 1e9feb7beff2d6649962d96273c89142, type: 3}
+  m_PrefabInstance: {fileID: 4508286431130263875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1505077284
 GameObject:
   m_ObjectHideFlags: 0
@@ -6901,6 +6910,22 @@ PrefabInstance:
     - target: {fileID: 5979756470307196952, guid: aae4a0653e3bc3247bed4fa6b5c95c06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922572466523523571, guid: aae4a0653e3bc3247bed4fa6b5c95c06, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1498553993}
+    - target: {fileID: 7922572466523523571, guid: aae4a0653e3bc3247bed4fa6b5c95c06, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1471970689}
+    - target: {fileID: 7922572466523523571, guid: aae4a0653e3bc3247bed4fa6b5c95c06, type: 3}
+      propertyPath: _mentalJauge
+      value: 
+      objectReference: {fileID: 1070333526}
+    - target: {fileID: 7922572466523523571, guid: aae4a0653e3bc3247bed4fa6b5c95c06, type: 3}
+      propertyPath: _gameDurationInSeconds
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae4a0653e3bc3247bed4fa6b5c95c06, type: 3}

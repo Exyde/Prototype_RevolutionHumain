@@ -53,9 +53,9 @@ public class Coeur : Entity{
     }
 
     public void Desactivate(){
-        Debug.Log("Player Triggered this Coeur");
         _isActive = false;
         _renderer.sharedMaterial = _inactiveMat;
+        GameManager._instance.AdjustSanity(_mentalStabilityHealingPercentage);
     }
 
     private void HandleCooldown(){

@@ -10,14 +10,6 @@ public class InputHandler : MonoBehaviour
 
     private void Awake(){
         _playerController = GetComponent<PlayerController>();
-        
-		Gamepad gp = Gamepad.current;
-        Joystick joystick = Joystick.current;
-
-		if (gp == null) Debug.Log("No gamepad");
-		if (joystick == null) Debug.Log("No Joystick");
-
-
     }
 
     public void Move(InputAction.CallbackContext ctx){

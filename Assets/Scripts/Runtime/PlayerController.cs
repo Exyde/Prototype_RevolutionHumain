@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour{
 	[SerializeField] bool _dashDisableMovement;
 	[SerializeField] bool _dashEndResetVelocity;
 
-
 	[SerializeField] [Range (0, 1000)] float _dashSpeed;
 	[SerializeField] [Range (0, 5)] float _dashDuration;
 	[SerializeField] [Range (0, 10)] float _dashCooldown;
@@ -40,11 +39,6 @@ public class PlayerController : MonoBehaviour{
 	{
 		if (_isDashing && _dashDisableMovement) return;
 		Look();
-
-		// if (Gamepad.current[UnityEngine.InputSystem.LowLevel.GamepadButton.X].isPressed){
-		// 	Debug.Log("Carabistouilles");
-		// }
-
 	}
 	private void FixedUpdate()
 	{
@@ -104,5 +98,4 @@ public class PlayerController : MonoBehaviour{
 	}
 	public void HandleInteract() => Debug.Log("Interact");
 	#endregion 
-
 }
