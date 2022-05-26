@@ -6,13 +6,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
 	
-	#region Fields
-	[Header ("Player Datas")]
+	#region Serialized Fields
+	[Header ("Movement Datas")]
 	[SerializeField] [Range (0, 100)] float _moveSpeed;
 	[SerializeField] [Range (100, 1000)] float _turnSpeed;
 
-	Vector3 _inputs;
+	[Header ("Dash Datas")]
+	[SerializeField] bool _canDash = true;
+	[SerializeField] bool _isDashing;
+	[SerializeField] bool _dashDisableMovement;
+	[SerializeField] bool _dashEndResetVelocity;
 
+
+	[SerializeField] [Range (0, 1000)] float _dashSpeed;
+	[SerializeField] [Range (0, 5)] float _dashDuration;
+	[SerializeField] [Range (0, 10)] float _dashCooldown;
+    [SerializeField] [Range (0, 100)] float _mentalStabilityDecayPercentage;
+	#endregion
+
+	#region Private Fields
+	private Vector3 _inputs;
 	private Rigidbody _rb;
 	#endregion 
 
@@ -24,10 +37,12 @@ public class PlayerController : MonoBehaviour{
 
 	private void Update()
 	{
+		if (_isDashing && _dashDisableMovement) return;
 		Look();
 	}
 	private void FixedUpdate()
 	{
+		if (_isDashing && _dashDisableMovement) return;
 		Move();
 	}
 	#endregion 
@@ -48,6 +63,28 @@ public class PlayerController : MonoBehaviour{
 		var rot = Quaternion.LookRotation (relative, Vector3.up);
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.deltaTime);
 	}
+
+	IEnumerator Dash(){
+		Debug.Log("Started Dash");
+		_canDash = false;
+		_isDashing = true;
+		_rb.useGravity = false;
+		Vector3 vel = (transform.forward * _dashSpeed);
+		_rb.velocity = vel;
+		Debug.Log ("Velocity : " + vel);
+		//Fx 
+		yield return new WaitForSeconds(_dashDuration);
+		_rb.useGravity = true;
+		_isDashing = false;
+		if (_dashEndResetVelocity) _rb.velocity = Vector3.zero;
+		Debug.Log("Ended Dash");
+
+
+		yield return new WaitForSeconds(_dashCooldown);
+		_canDash = true;
+		Debug.Log("Dash is ready !");
+
+	}
 	#endregion
 
 	#region Inputs Callbacks
@@ -55,7 +92,10 @@ public class PlayerController : MonoBehaviour{
 		_inputs = new Vector3(inputs.x, 0, inputs.y);
 	}
 
-	public void HandleDash() => Debug.Log("Dash");
+	public void HandleDash(){
+		Debug.Log("Dash button pressed");
+		if (_canDash) StartCoroutine(Dash());
+	}
 	public void HandleInteract() => Debug.Log("Interact");
 	#endregion 
 
