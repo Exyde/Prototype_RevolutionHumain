@@ -3107,7 +3107,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4459,7 +4459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6e0131eb99ca34888eb310545e0c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1675307496}
   offset: {x: 0, y: 0, z: 0}
   lookAtTarget: 0
 --- !u!1 &1505077284
@@ -4881,6 +4881,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633312167}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1675307496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7934123201497802013, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+  m_PrefabInstance: {fileID: 8596230971825203318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675810610
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,6 +6529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3169095241157261490, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: _moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7223982340372247944, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: m_Name
       value: PF_Player
