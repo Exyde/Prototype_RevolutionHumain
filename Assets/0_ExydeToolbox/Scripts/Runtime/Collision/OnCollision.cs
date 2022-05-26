@@ -22,4 +22,5 @@ public class OnCollision : MonoBehaviour{
     //         gm.RestartLevel();
     //     }
     // }
+
 }

@@ -166,17 +166,6 @@
                 {
                     "name": "",
                     "id": "0f4b3322-a5e7-43fd-87ae-bb7d57ec664b",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "40f62881-9ba1-44f9-a6f3-0980acad7065",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
@@ -187,8 +176,30 @@
                 },
                 {
                     "name": "",
-                    "id": "6ca31a53-c451-451c-91a2-d11ace2905dd",
-                    "path": "<HID::ShanWan     PC/PS3/Android Gamepad>/button2",
+                    "id": "8195d6da-c00b-4a88-9e40-a1986ffe6f1c",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6835bfb0-578f-44f2-8f75-3e0c96b0c6cd",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bc90956-fdd8-4388-bb63-dd04ae8473c7",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -220,22 +231,22 @@
                 },
                 {
                     "name": "",
-                    "id": "2d57ff9a-7d97-408e-b23e-f59038c320aa",
+                    "id": "ec714242-c5ac-4b9b-9f50-ae325bf05acd",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "11d7acb9-2fe1-4eff-afc0-43b8867f2a7d",
-                    "path": "<HID::ShanWan     PC/PS3/Android Gamepad>/button3",
+                    "id": "21170e8b-9139-4719-91f5-9de574c81745",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false

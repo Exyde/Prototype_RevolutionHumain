@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Reference video : https://www.youtube.com/watch?v=8ZxVBCvJDWk
 
@@ -39,6 +40,11 @@ public class PlayerController : MonoBehaviour{
 	{
 		if (_isDashing && _dashDisableMovement) return;
 		Look();
+
+		// if (Gamepad.current[UnityEngine.InputSystem.LowLevel.GamepadButton.X].isPressed){
+		// 	Debug.Log("Carabistouilles");
+		// }
+
 	}
 	private void FixedUpdate()
 	{

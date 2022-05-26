@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 3169095241157261490}
   m_Layer: 0
   m_Name: PF_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &1675307492
 BoxCollider:
@@ -303,14 +303,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9297231d2442649b531636c8963988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0
-  _turnSpeed: 0
+  _moveSpeed: 5
+  _turnSpeed: 434
   _canDash: 1
   _isDashing: 0
-  _dashSpeed: 0
-  _dashDuration: 0
-  _dashCooldown: 0
-  _mentalStabilityDecayPercentage: 0
+  _dashDisableMovement: 1
+  _dashEndResetVelocity: 1
+  _dashSpeed: 20
+  _dashDuration: 0.15
+  _dashCooldown: 1
+  _mentalStabilityDecayPercentage: 20
 --- !u!1 &8476995178341139430
 GameObject:
   m_ObjectHideFlags: 0

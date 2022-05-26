@@ -5,9 +5,6 @@ using UnityEngine;
 public class Coeur : Entity{
     //Todo :
         // Broadcast Event to the MentalJauge
-        // Implement cooldown & reactivation
-        // Add the correct sprites
-        // Refacto with animations or mesh
         
     #region Serialized Fields
     [Header ("Gameplay Datas")]
@@ -21,34 +18,24 @@ public class Coeur : Entity{
     [SerializeField] string _playerTag;
 
     [Header ("Sprites, Textures, Anims References")]
-    [SerializeField] Sprite _activeSprite;
-    [SerializeField] Sprite _inactiveSprite;
+    [SerializeField] Material _activeMat;
+    [SerializeField] Material _inactiveMat;
     #endregion
 
     #region Private Fields & components
-    private SpriteRenderer _renderer;
+    private MeshRenderer _renderer;
     private float _currentCooldown;
     #endregion
 
     #region Unity Callbacks
     private void Awake(){
-        _renderer = GetComponent<SpriteRenderer>();
-        _currentCooldown = 0f;
+        _renderer = GetComponent<MeshRenderer>();
+        Activate();
     }
 
     private void Update(){
-
-    }
-    #endregion
-    public void Activate(){
-        _isActive = true;
-        _renderer.sprite = _activeSprite;
-    }
-
-    public void Desactivate(){
-        Debug.Log("Player Triggered this Coeur");
-        _isActive = false;
-        _renderer.sprite = _inactiveSprite;
+        if (_isActive) return;
+        HandleCooldown();
     }
 
     private void OnTriggerEnter(Collider other){
@@ -56,4 +43,31 @@ public class Coeur : Entity{
             Desactivate();
         }
     }
+    #endregion
+    
+    #region Methods
+    public void Activate(){
+        _isActive = true;
+        _currentCooldown = 0f;
+        _renderer.sharedMaterial = _activeMat;
+    }
+
+    public void Desactivate(){
+        Debug.Log("Player Triggered this Coeur");
+        _isActive = false;
+        _renderer.sharedMaterial = _inactiveMat;
+    }
+
+    private void HandleCooldown(){
+        if (_currentCooldown < _cooldownInSeconds){
+            _currentCooldown += Time.deltaTime;
+        }
+
+        if (_currentCooldown >= _cooldownInSeconds){
+            Activate();
+        }
+    }
+
+    #endregion
+
 }
