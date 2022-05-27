@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 //Reference video : https://www.youtube.com/watch?v=8ZxVBCvJDWk
 
-public class PlayerController : MonoBehaviour{
+public class PlayerController : Entity{
 	
 	#region Serialized Fields
 	[Header ("Movement Datas")]
@@ -71,14 +71,14 @@ public class PlayerController : MonoBehaviour{
 		_rb.useGravity = false;
 		Vector3 vel = (transform.forward * _dashSpeed);
 		_rb.velocity = vel;
+
 		GameManager._instance.AdjustSanity(-_mentalStabilityDecayPercentage);
-		//Fx 
+		//Fx ---
 		yield return new WaitForSeconds(_dashDuration);
 		_rb.useGravity = true;
 		_isDashing = false;
 		if (_dashEndResetVelocity) _rb.velocity = Vector3.zero;
 		Debug.Log("Ended Dash");
-
 
 		yield return new WaitForSeconds(_dashCooldown);
 		_canDash = true;

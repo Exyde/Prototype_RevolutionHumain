@@ -5,8 +5,8 @@ using UnityEngine;
 public class MerCauchemar : MonoBehaviour
 {
     [SerializeField] string _playerTag = "Player";
-    [SerializeField] float _TimeBtwDecay = 1f;
-    [SerializeField] [Range (0, 100)] float _SanityDecayPercent = 10f;
+    [SerializeField] float _TimeBtwDecay = 0.1f;
+    [SerializeField] [Range (0, 100)] float _SanityDecayPercent = 100f;
 
     private bool _isPlayerInZone = false;
     float _currentTimer = 0f;
@@ -14,7 +14,10 @@ public class MerCauchemar : MonoBehaviour
     void Update()
     {
         if (!_isPlayerInZone) return;
+        HandleTimer();
+    }
 
+    void HandleTimer(){
         if (_currentTimer < _TimeBtwDecay) _currentTimer += Time.deltaTime;
         if (_currentTimer >= _TimeBtwDecay){
             _currentTimer = 0;

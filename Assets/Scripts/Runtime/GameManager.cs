@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header ("Core references")]
     [SerializeField] GameObject _player;
+    
     [SerializeField] GameObject _cameraPivot;
     [SerializeField] MentalJauge _mentalJauge;
 
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if (_instance != null && _instance != this) Destroy (this.gameObject);
         _instance = this;
-
+        
         _mentalJauge.gameObject.SetActive(true);
     }
     public void ReloadGame(){

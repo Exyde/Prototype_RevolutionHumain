@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Coeur : Entity{
-    //Todo :
-        // Broadcast Event to the MentalJauge
-        
+
     #region Serialized Fields
     [Header ("Gameplay Datas")]
     [SerializeField]
@@ -20,6 +18,7 @@ public class Coeur : Entity{
     [Header ("Sprites, Textures, Anims References")]
     [SerializeField] Material _activeMat;
     [SerializeField] Material _inactiveMat;
+
     #endregion
 
     #region Private Fields & components
