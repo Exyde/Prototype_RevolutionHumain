@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 966618200}
   - component: {fileID: 1328751845034399788}
   m_Layer: 0
-  m_Name: PF_BASE_Mer de Cauchemars
+  m_Name: 00_PF_BASE_Mer de Cauchemars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 6943775862299179417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 1, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8817745190661567831}
   m_Father: {fileID: 0}
