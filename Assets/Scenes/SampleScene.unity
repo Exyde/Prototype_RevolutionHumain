@@ -1441,22 +1441,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3169095241157261490, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
-      propertyPath: _dashSpeed
-      value: 40
+    - target: {fileID: 628602861, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: _applyWorldIsoRotation
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3169095241157261490, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
-      propertyPath: _dashDuration
-      value: 0.2
+    - target: {fileID: 628602861, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: _AlignWithWorldRotation
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3169095241157261490, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
-      propertyPath: _mentalStabilityDecayPercentage
-      value: 20
+    - target: {fileID: 4237238904140295489, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4429036933993330865, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d76d5dba59c8a824a8170635648a356c, type: 2}
+    - target: {fileID: 4237238904140295489, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237238904140295489, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237238904140295489, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237238904140295489, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7223982340372247944, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: m_Name
       value: PF_Player

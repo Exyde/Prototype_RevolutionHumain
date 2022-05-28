@@ -38,7 +38,7 @@ public class PlayerController : Entity{
 	private void Update()
 	{
 		if (_isDashing && _dashDisableMovement) return;
-		Look();
+		//Look();
 	}
 	private void FixedUpdate()
 	{
@@ -49,7 +49,9 @@ public class PlayerController : Entity{
 
 	#region Methods
 	private void Move(){
-		_rb.MovePosition (transform.position + (transform.forward * _inputs.magnitude) * _moveSpeed * Time.deltaTime);
+		// _rb.MovePosition (transform.position + (transform.forward * _inputs.magnitude) * _moveSpeed * Time.deltaTime);
+		_rb.MovePosition (transform.position + (_inputs.ToIso() * _inputs.magnitude) * _moveSpeed * Time.deltaTime);
+
 	}
 
 	private void Look(){
