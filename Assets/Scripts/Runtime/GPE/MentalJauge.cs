@@ -22,8 +22,7 @@ public class MentalJauge : MonoBehaviour
     {
         _mentalSanity = 100f;
         _percentLossPerSecond = _mentalSanity / (float) GameManager._instance.GetGameDuration();
-        InvokeRepeating("DecaySanity", 0, 1);
-        InvokeRepeating("UpdateDisplay", 0, 1);
+        // InvokeRepeating("DecaySanity", 0, 1);
     }
     #endregion
 
@@ -31,12 +30,18 @@ public class MentalJauge : MonoBehaviour
     void DecaySanity(){
         _mentalSanity -= _percentLossPerSecond;
 
+        UpdateDisplay();
         CheckSanity();
+    }
+
+    public void DecaySanityTimerCallback(){
+        DecaySanity();
     }
 
     public void UpdateSanity(float amount){
         _mentalSanity += amount;
 
+        UpdateDisplay();
         CheckSanity();
     }
 
