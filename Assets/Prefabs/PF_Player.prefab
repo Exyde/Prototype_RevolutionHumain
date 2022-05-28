@@ -107,8 +107,9 @@ GameObject:
   - component: {fileID: 4237238904140295489}
   - component: {fileID: 1660750393701722177}
   - component: {fileID: 628602861}
+  - component: {fileID: 3926758963288718471}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +127,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 7934123201497802013}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!212 &1660750393701722177
 SpriteRenderer:
@@ -192,6 +193,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db62039d093a154484e8f2425cd1ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _AlignWithWorldRotation: 0
+--- !u!95 &3926758963288718471
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148261622571353893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7223982340372247944
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,8 +245,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 235658026926096073}
   - {fileID: 4237238904140295489}
+  - {fileID: 235658026926096073}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -423,7 +444,7 @@ GameObject:
   - component: {fileID: 4429036933993330865}
   - component: {fileID: 8988276894776819354}
   m_Layer: 0
-  m_Name: Mesh
+  m_Name: LEGACY_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,7 +463,7 @@ Transform:
   m_Children:
   - {fileID: 8643924140373796948}
   m_Father: {fileID: 7934123201497802013}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4622074032887790089
 MeshFilter:
