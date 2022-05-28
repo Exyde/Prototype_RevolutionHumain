@@ -18,17 +18,20 @@ public class Coeur : Entity{
     [Header ("Sprites, Textures, Anims References")]
     [SerializeField] Material _activeMat;
     [SerializeField] Material _inactiveMat;
+    [SerializeField] Color _activeColor;
+    [SerializeField] Color _inactiveColor;
+
 
     #endregion
 
     #region Private Fields & components
-    private MeshRenderer _renderer;
+    private SpriteRenderer _renderer;
     private float _currentCooldown;
     #endregion
 
     #region Unity Callbacks
     private void Awake(){
-        _renderer = GetComponent<MeshRenderer>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
         Activate();
     }
 
@@ -49,11 +52,13 @@ public class Coeur : Entity{
         _isActive = true;
         _currentCooldown = 0f;
         _renderer.sharedMaterial = _activeMat;
+        _renderer.color = _activeColor;
     }
 
     public void Desactivate(){
         _isActive = false;
         _renderer.sharedMaterial = _inactiveMat;
+        _renderer.color = _inactiveColor;
         GameManager._instance.AdjustSanity(_mentalStabilityHealingPercentage);
     }
 
