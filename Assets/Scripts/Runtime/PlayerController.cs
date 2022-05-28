@@ -71,7 +71,9 @@ public class PlayerController : Entity{
 		_canDash = false;
 		_isDashing = true;
 		_rb.useGravity = false;
-		Vector3 vel = (transform.forward * _dashSpeed);
+		Vector3 vel = (_inputs.ToIso() * _dashSpeed);
+		// Vector3 vel = (transform.forward * _dashSpeed);
+
 		_rb.velocity = vel;
 
 		GameManager._instance.AdjustSanity(-_mentalStabilityDecayPercentage);
@@ -96,7 +98,7 @@ public class PlayerController : Entity{
 
 	public void HandleDash(){
 		Debug.Log("Dash button pressed");
-		if (_canDash) StartCoroutine(Dash());
+		if (_canDash && _inputs != Vector3.zero) StartCoroutine(Dash());
 	}
 	public void HandleInteract() => Debug.Log("Interact");
 	#endregion 
