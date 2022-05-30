@@ -2226,16 +2226,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 448458343, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: _materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 448458343, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: _materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 4d7f8137e4945b04da16a15bc4a6316d, type: 2}
     - target: {fileID: 448458343, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: _materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 4d7f8137e4945b04da16a15bc4a6316d, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 448458343, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: _overrideRendererMaterials
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660750393701722177, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660750393701722177, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1660750393701722177, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1660750393701722177, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2244,7 +2260,7 @@ PrefabInstance:
     - target: {fileID: 1660750393701722177, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 4d7f8137e4945b04da16a15bc4a6316d, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7223982340372247944, guid: f60a656bb22d9a041b1c3448eaf47fd1, type: 3}
       propertyPath: m_Name
       value: PF_Player

@@ -8,13 +8,15 @@ using UnityEngine;
 [RequireComponent (typeof(SpriteRenderer))]
 public class CustomSpriteRendererMaterials : MonoBehaviour
 {
+    [SerializeField] bool _overrideRendererMaterials;
     [SerializeField] Material[] _materials;
+    
 
     void OnValidate(){
-        GetComponent<SpriteRenderer>().materials = _materials;
+       if(_overrideRendererMaterials) GetComponent<SpriteRenderer>().materials = _materials;
     }
 
     void Awake(){
-        GetComponent<SpriteRenderer>().materials = _materials;
+       if(_overrideRendererMaterials) GetComponent<SpriteRenderer>().materials = _materials;
     }
 }
