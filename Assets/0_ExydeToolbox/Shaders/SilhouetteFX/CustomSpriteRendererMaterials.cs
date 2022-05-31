@@ -9,14 +9,24 @@ using UnityEngine;
 public class CustomSpriteRendererMaterials : MonoBehaviour
 {
     [SerializeField] bool _overrideRendererMaterials;
+    [SerializeField] bool _enableShadows;
     [SerializeField] Material[] _materials;
     
 
     void OnValidate(){
-       if(_overrideRendererMaterials) GetComponent<SpriteRenderer>().materials = _materials;
+       ProcessUserSettings();
     }
+    
 
     void Awake(){
-       if(_overrideRendererMaterials) GetComponent<SpriteRenderer>().materials = _materials;
+       ProcessUserSettings();
+    }
+
+    void ProcessUserSettings(){
+
+      SpriteRenderer _renderer = GetComponent<SpriteRenderer>();
+       if(_overrideRendererMaterials) _renderer.materials = _materials;
+       _renderer.shadowCastingMode = _enableShadows ? UnityEngine.Rendering.ShadowCastingMode.On : UnityEngine.Rendering.ShadowCastingMode.Off;
+
     }
 }
