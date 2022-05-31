@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
 
     [Header ("Core references")]
-    [SerializeField] GameObject _player;
+    [SerializeField] PlayerController _player;
     
     [SerializeField] GameObject _cameraPivot;
     [SerializeField] MentalJauge _mentalJauge;
@@ -22,6 +22,16 @@ public class GameManager : MonoBehaviour
         if (_instance != null && _instance != this) Destroy (this.gameObject);
         _instance = this;
         
+
+        _player = FindObjectOfType<PlayerController>();
+        _cameraPivot = Camera.main.gameObject;
+        _mentalJauge = FindObjectOfType<MentalJauge>();
+
+        // if (_player == null || _cameraPivot == null || _mentalJauge){
+        //     Debug.LogWarning("Missing references for the GameManager. Disabling it.");
+        //     this.gameObject.SetActive(false);
+        // }
+
         _mentalJauge.gameObject.SetActive(true);
     }
     public void ReloadGame(){

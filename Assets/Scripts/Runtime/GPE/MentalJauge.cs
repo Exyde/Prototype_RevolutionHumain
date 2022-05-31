@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class MentalJauge : MonoBehaviour
 {
     #region Serialized Fields
-    [Header ("Gameplay Data")]
+
+    [Header ("Debug")]
     [SerializeField] bool _decaySanity;
+    [SerializeField] bool _displaySanityPanelFeedback;
+
+    [Header ("Gameplay Data")]
     [SerializeField] [Range (0, 100)] float _mentalSanity;
     public float GetSanityPercent() => _mentalSanity;
     float _percentLossPerSecond;
@@ -23,7 +27,10 @@ public class MentalJauge : MonoBehaviour
     {
         _mentalSanity = 100f;
         _percentLossPerSecond = _mentalSanity / (float) GameManager._instance.GetGameDuration();
-        // InvokeRepeating("DecaySanity", 0, 1);
+
+
+        //Temp.
+        if (!_decaySanity) GetComponent<TimerEvent>().Stop();
     }
     #endregion
 
@@ -36,7 +43,6 @@ public class MentalJauge : MonoBehaviour
     }
 
     public void DecaySanityTimerCallback(){
-        if (!_decaySanity) return; //TEMP : Hnadle that better later when doing the hub.
         DecaySanity();
     }
 
@@ -57,6 +63,7 @@ public class MentalJauge : MonoBehaviour
         //Img
         _imgSanityJauge.fillAmount = _mentalSanity / 100;
 
+        if (!_displaySanityPanelFeedback) return;
         //Panel
         float t = 1.0f - (_mentalSanity/100.0f);
         float alpha = Mathf.Lerp(0, 1, t );

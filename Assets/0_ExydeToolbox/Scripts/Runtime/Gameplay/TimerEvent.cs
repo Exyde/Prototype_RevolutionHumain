@@ -12,10 +12,33 @@ public class TimerEvent : MonoBehaviour
     [SerializeField] float _timerDuration;
     [SerializeField] float _timeElapsed;
     [SerializeField] bool _isLoopTimer;
+    [SerializeField] bool _shouldTimerRun;
     [SerializeField] UnityEvent _event;
+
+
+    #region Public methods
+    public void Run(){
+        _shouldTimerRun = true;
+    }
+
+    public void Pause(){
+        _shouldTimerRun = false;
+    }
+
+    public void Stop(){
+        _timeElapsed = 0;
+        _shouldTimerRun = false;
+    }
+
+    public void Reset(){
+        _timeElapsed = 0;
+    }
+    #endregion 
 
     private void Update()
     {
+        if(!_shouldTimerRun) return;
+
         if (_timeElapsed < _timerDuration){
             _timeElapsed += Time.deltaTime;
         }
