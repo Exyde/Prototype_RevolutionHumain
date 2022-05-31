@@ -7,6 +7,7 @@ public class MentalJauge : MonoBehaviour
 {
     #region Serialized Fields
     [Header ("Gameplay Data")]
+    [SerializeField] bool _decaySanity;
     [SerializeField] [Range (0, 100)] float _mentalSanity;
     public float GetSanityPercent() => _mentalSanity;
     float _percentLossPerSecond;
@@ -35,6 +36,7 @@ public class MentalJauge : MonoBehaviour
     }
 
     public void DecaySanityTimerCallback(){
+        if (!_decaySanity) return; //TEMP : Hnadle that better later when doing the hub.
         DecaySanity();
     }
 
