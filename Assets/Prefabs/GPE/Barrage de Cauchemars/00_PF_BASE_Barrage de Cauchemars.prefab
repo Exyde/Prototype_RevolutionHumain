@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTag: Player
   _isPlayerInZone: 0
-  _SanityDecayPercent: 10
+  _SanityDecayPercent: 50
 --- !u!114 &2842273801542742806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerName: Decay Sanity In Zone
-  _timerDuration: 1
+  _timerDuration: 0.7
   _timeElapsed: 0
   _isLoopTimer: 1
   _shouldTimerRun: 0

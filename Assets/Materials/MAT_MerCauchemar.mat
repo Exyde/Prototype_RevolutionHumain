@@ -95,8 +95,8 @@ Material:
     m_Ints: []
     m_Floats:
     - Alpha_Cutoff: 0.3
-    - Speed_X: 0.2
-    - Speed_Y: 0.4
+    - Speed_X: 0.01
+    - Speed_Y: 0.02
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour
         _instance = this;
         
 
-        _player = FindObjectOfType<PlayerController>();
-        _cameraPivot = Camera.main.gameObject;
-        _mentalJauge = FindObjectOfType<MentalJauge>();
+        // _player = FindObjectOfType<PlayerController>();
+        // _cameraPivot = Camera.main.gameObject;
+        // _mentalJauge = FindObjectOfType<MentalJauge>();
 
         // if (_player == null || _cameraPivot == null || _mentalJauge){
         //     Debug.LogWarning("Missing references for the GameManager. Disabling it.");

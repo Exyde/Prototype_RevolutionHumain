@@ -31,6 +31,7 @@ public class MentalJauge : MonoBehaviour
 
         //Temp.
         if (!_decaySanity) GetComponent<TimerEvent>().Stop();
+        else if (_decaySanity) GetComponent<TimerEvent>().Run();
     }
     #endregion
 
