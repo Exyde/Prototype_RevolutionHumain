@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class BarrageController : MonoBehaviour
 {
-    [SerializeField] List<BarrageCauchemar> _barrages;
+
+    [Header ("Quand tu ramasses l'objet")]
+    [SerializeField] List<BarrageCauchemar> _barragesToRemoveOnRammassage;
+    [Header ("Quand tu poses l'objet dans le HUB voila quoi")]
+    [SerializeField] List<BarrageCauchemar> _barragesToRemoveOnPosageHub;
+
 }

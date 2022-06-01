@@ -6,23 +6,8 @@ using UnityEngine.InputSystem;
 //Reference video : https://www.youtube.com/watch?v=8ZxVBCvJDWk
 
 public class PlayerController : Entity{
-	
-	#region Serialized Fields
-	[Header ("Movement Datas")]
-	[SerializeField] [Range (0, 100)] float _moveSpeed;
-	[SerializeField] [Range (100, 1000)] float _turnSpeed;
 
-	[Header ("Dash Datas")]
-	[SerializeField] bool _canDash = true;
-	[SerializeField] bool _isDashing;
-	[SerializeField] bool _dashDisableMovement;
-	[SerializeField] bool _dashEndResetVelocity;
-
-	[SerializeField] [Range (0, 1000)] float _dashSpeed;
-	[SerializeField] [Range (0, 5)] float _dashDuration;
-	[SerializeField] [Range (0, 10)] float _dashCooldown;
-    [SerializeField] [Range (0, 100)] float _mentalStabilityDecayPercentage;
-	#endregion
+	[SerializeField] PlayerDatas _playerDatas;
 
 	#region Private Fields
 	private Vector3 _inputs;
@@ -33,59 +18,43 @@ public class PlayerController : Entity{
 	private void Awake()
 	{
 		_rb = GetComponent<Rigidbody>();
+		_playerDatas.ResetDashData();
 	}
 
 	private void Update()
 	{
-		if (_isDashing && _dashDisableMovement) return;
-		//Look();
+		if (_playerDatas._isDashing && _playerDatas._dashDisableMovement) return;
 	}
 	private void FixedUpdate()
 	{
-		if (_isDashing && _dashDisableMovement) return;
+		if (_playerDatas._isDashing && _playerDatas._dashDisableMovement) return;
 		Move();
 	}
 	#endregion 
 
 	#region Methods
 	private void Move(){
-		// _rb.MovePosition (transform.position + (transform.forward * _inputs.magnitude) * _moveSpeed * Time.deltaTime);
-		_rb.MovePosition (transform.position + (_inputs.ToIso() * _inputs.magnitude) * _moveSpeed * Time.deltaTime);
-
-	}
-
-	private void Look(){
-		if (_inputs == Vector3.zero) return;
-
-		// Matrix4x4 matrix = Matrix4x4.Rotate(Quaternion.Euler (0, 45, 0));
-		// //Just like BOTW skew ! :D
-		// var skewedInput = matrix.MultiplyPoint3x4(_inputs);
-
-		var relative = (transform.position + _inputs.ToIso()) - transform.position;
-		var rot = Quaternion.LookRotation (relative, Vector3.up);
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.deltaTime);
+		_rb.MovePosition (transform.position + (_inputs.ToIso() * _inputs.magnitude) *_playerDatas. _moveSpeed * Time.deltaTime);
 	}
 
 	IEnumerator Dash(){
 		Debug.Log("Started Dash");
-		_canDash = false;
-		_isDashing = true;
+		_playerDatas._canDash = false;
+		_playerDatas._isDashing = true;
 		_rb.useGravity = false;
-		Vector3 vel = (_inputs.ToIso() * _dashSpeed);
-		// Vector3 vel = (transform.forward * _dashSpeed);
-
+		Vector3 vel = (_inputs.ToIso() * _playerDatas._dashSpeed);
 		_rb.velocity = vel;
 
-		GameManager._instance.AdjustSanity(-_mentalStabilityDecayPercentage);
+		GameManager._instance.AdjustSanity(-_playerDatas._dashMentalStabilityDecayPercentage);
 		//Fx ---
-		yield return new WaitForSeconds(_dashDuration);
+		yield return new WaitForSeconds(_playerDatas._dashDuration);
 		_rb.useGravity = true;
-		_isDashing = false;
-		if (_dashEndResetVelocity) _rb.velocity = Vector3.zero;
+		_playerDatas._isDashing = false;
+		if (_playerDatas._dashEndResetVelocity) _rb.velocity = Vector3.zero;
 		Debug.Log("Ended Dash");
 
-		yield return new WaitForSeconds(_dashCooldown);
-		_canDash = true;
+		yield return new WaitForSeconds(_playerDatas._dashCooldown);
+		_playerDatas._canDash = true;
 		Debug.Log("Dash is ready !");
 
 	}
@@ -98,8 +67,21 @@ public class PlayerController : Entity{
 
 	public void HandleDash(){
 		Debug.Log("Dash button pressed");
-		if (_canDash && _inputs != Vector3.zero) StartCoroutine(Dash());
+		if (_playerDatas._canDash && _inputs != Vector3.zero) StartCoroutine(Dash());
 	}
 	public void HandleInteract() => Debug.Log("Interact");
 	#endregion 
+
+	//Deprecatted
+	// private void Look(){
+	// 	if (_inputs == Vector3.zero) return;
+
+	// 	// Matrix4x4 matrix = Matrix4x4.Rotate(Quaternion.Euler (0, 45, 0));
+	// 	// //Just like BOTW skew ! :D
+	// 	// var skewedInput = matrix.MultiplyPoint3x4(_inputs);
+
+	// 	var relative = (transform.position + _inputs.ToIso()) - transform.position;
+	// 	var rot = Quaternion.LookRotation (relative, Vector3.up);
+	// 	transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _playerDatas._turnSpeed * Time.deltaTime);
+	// }
 }
