@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 9.4
   _turnSpeed: 0
-  _dashSpeed: 50
-  _dashDuration: 5
-  _dashCooldown: 10
-  _dashMentalStabilityDecayPercentage: 50
-  _canDash: 0
-  _isDashing: 1
-  _dashDisableMovement: 0
-  _dashEndResetVelocity: 0
+  _dashSpeed: 40
+  _dashDuration: 0.2
+  _dashCooldown: 0.4
+  _dashMentalStabilityDecayPercentage: 7.5
+  _canDash: 1
+  _isDashing: 0
+  _dashDisableMovement: 1
+  _dashEndResetVelocity: 1
