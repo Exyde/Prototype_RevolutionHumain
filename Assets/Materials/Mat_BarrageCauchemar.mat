@@ -94,9 +94,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Alpha_Cutoff: 0.08
-    - Speed_X: 0.2
-    - Speed_Y: 0.2
+    - Alpha_Cutoff: 0.05
+    - Speed_X: 0.05
+    - Speed_Y: 0.05
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
